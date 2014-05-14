@@ -2,5 +2,5 @@ var thesisSearcherServices = angular.module('thesisSearcherServices', ['ngResour
  
 thesisSearcherServices.factory('PDF', ['$resource',
   function($resource){
-    return $resource('/pdf/:searchValue', {}, {});
+    return $resource('pdf/:searchValue', {}, {});
   }]);
