@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for inode in `ls`
+do
+	if [ -f $inode ]
+	then
+		pdftotext $inode ../text/$inode\.txt
+	fi
+done
