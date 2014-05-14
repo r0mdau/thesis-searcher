@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="thesisSearcherApplication">
+<head>
+	<meta charset="utf-8">
+    <title>Thesis Searcher</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="application.css">
+
+	<script src="angular/angular.min.js"></script>
+	<script src="angular/angular-route.min.js"></script>
+	<script src="angular/angular-resource.min.js"></script>
+
+	<script src="js/application/thesisSearcherApplication.js"></script>
+	<script src="js/application/thesisSearcherServices.js"></script>
+	<script src="js/application/controllers/thesisSearcherControllers.js"></script>
+	<script src="js/application/controllers/thesisSearcherHomeController.js"></script>
+</head>
+<body ng-controller="thesisSearcherHomeController">
+	<div ng-view></div>
+</body>
+</html>
