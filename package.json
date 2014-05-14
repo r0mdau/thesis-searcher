@@ -1,25 +1,25 @@
 {
-    "name": "thesis-searcher"
-  , "version": "0.0.1"
-  , "authors": [
-		"r0mdau <romain.dauby@gmail.com>",
-		"adrael <work.rmarques@gmail.com>",
-		"nilmanduil <nilmanduil@gmail.com>",
-		"WhatElse <felixwattez@gmail.com>"
-	]
-  , "description": "Moteur de recherche de pdf, elasticsearch et nodejs"
-  , "repository": {
-	"type": "git"
-      , "url": "https://github.com/r0mdau/thesis-searcher"
-    }
-  , "licenses": [
+  "name": "thesis-searcher",
+  "version": "0.0.1",
+  "authors": [
+    "r0mdau <romain.dauby@gmail.com>",
+    "adrael <work.rmarques@gmail.com>",
+    "nilmanduil <nilmanduil@gmail.com>",
+    "WhatElse <felixwattez@gmail.com>"
+  ],
+  "description": "Moteur de recherche de pdf, elasticsearch et nodejs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/r0mdau/thesis-searcher"
+  },
+  "licenses": [
     {
-        "type": "Apache-2.0"
-      , "url": "http://www.apache.org/licenses/LICENSE-2.0"
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
     }
-  ]
-  , "dependencies": {
-        "express": "~3.2.1"
-      , "ejs": "~0.8.3"
-    }
+  ],
+  "dependencies": {
+    "elasticsearch": "^2.1.4",
+    "express": "^4.2.0"
+  }
 }
