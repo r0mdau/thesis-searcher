@@ -5,6 +5,6 @@ do
 	if [ -f $inode ]
 	then
 		pdftotext $inode ../text/$inode\.txt
-		mv $inode ./done/
+		mv $inode ../done/$inode
 	fi
 done
