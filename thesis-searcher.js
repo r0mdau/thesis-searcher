@@ -1,22 +1,20 @@
 var express = require('express');
+var elasticsearch = require('elasticsearch');
+var client = new elasticsearch.Client();
+ 
 var app = express();
 
-/* On utilise les cookies et les sessions */
-app.use(express.cookieParser())
-.use(express.session({secret: 'todosecret'}))
-.use(express.bodyParser())
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	next();
+});
 
-/* On affiche la todolist et le formulaire */
-.get('/', function(req, res) {
-    res.render('index.ejs', '');
-})
-
-/* Autoriser l'accès aux ressources des modules externes */
-.use(express.static(__dirname, '/modules'))
-
-/* On redirige vers la todolist si la page demandée n'est pas trouvée */
-.use(function(req, res, next){
-    res.redirect('/');
-})
-
-.listen(8080);
+app.get('/pdf', function(req, res) {
+    res.send({message:'Veuillez fournir un paramètre de recherche'});
+});
+app.get('/pdf/:id', function(req, res) {
+    res.send({id:req.params.id, name: "The Name", description: "description"});
+});
+ 
+app.listen(80);
