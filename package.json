@@ -19,6 +19,7 @@
     }
   ],
   "dependencies": {
+    "cron": "^1.0.4",
     "elasticsearch": "^2.1.4",
     "express": "^4.2.0"
   }
