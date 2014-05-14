@@ -2,7 +2,7 @@ var CronJob = require('cron').CronJob;
 var job = new CronJob({
   cronTime: '* */5 * * * *',
   onTick: function() {
-	fs.readdir(".",function(error,directoryObject){
+	fs.readdir(".",function(error,files){
 		for(var i in files){
 			var file = fs.readFileSync(files[i],"UTF-8");
 			var datas = file.split("\n");	
