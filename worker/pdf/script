@@ -4,7 +4,10 @@ for inode in `ls`
 do
 	if [ -f $inode ]
 	then
-		pdftotext $inode ../text/$inode\.txt
-		mv $inode ../done/$inode
+		if [ ${inode: -4} == ".pdf" ]
+		then
+			pdftotext $inode ../text/$inode\.txt
+			mv $inode ../done/$inode
+		fi
 	fi
 done

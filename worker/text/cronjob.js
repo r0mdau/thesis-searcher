@@ -1,6 +1,8 @@
 var CronJob = require('cron').CronJob;
+var fs = require('fs');
+
 var job = new CronJob({
-  cronTime: '* */5 * * * *',
+  cronTime: '0 * * * * *',
   onTick: function() {
 	fs.readdir(".",function(error,files){
 		for(var i in files){
@@ -8,7 +10,7 @@ var job = new CronJob({
 			var datas = file.split("\n");	
 			for(var i = 0 ; i < datas.length ; i++){
 			    if(datas[i] != ''){
-					//A voir comment on recupè les donnees en fonction des pdf
+					console.log(datas[i]);
 				}
 			}
 		}
