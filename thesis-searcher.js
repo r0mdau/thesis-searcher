@@ -24,13 +24,13 @@ app.use(function(req, res, next) {
 	// :id = req.params.id
     res.send({data : 
 				[{
-					id		: 1,
+					id		: "1",
 					date	: "14 Avril 2013", 
 					author	: "Romain Dauby", 
 					fileName: "M13_DAUBY.pdf"
 				},
 				{
-					id		: 2,
+					id		: "2",
                     date    : "24 Juin 2013",
                     author  : "Felix Wattez",
                     fileName: "M13_WATTEZ.pdf"
@@ -46,7 +46,7 @@ app.use(function(req, res, next) {
 .get('/pdf/:id', function(req, res) {
 	res.send({data :
                 {
-					id		: 1,
+					id		: "1",
                     date    : "14 Avril 2013",
                     author  : "Romain Dauby",
                     fileName: "M13_DAUBY.pdf",
