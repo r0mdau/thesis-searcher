@@ -11,6 +11,10 @@ thesisSearcherApplication.config(['$routeProvider',
         templateUrl: 'partials/home.html',
         controller: 'thesisSearcherHomeController'
       }).
+      when('/detail/:searchValue', {
+        templateUrl: 'partials/detail.html',
+        controller: 'thesisSearcherDetailController'
+      }).
       otherwise({
         redirectTo: '/home'
       });

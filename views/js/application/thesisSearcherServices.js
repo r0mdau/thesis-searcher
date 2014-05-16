@@ -2,5 +2,10 @@ var thesisSearcherServices = angular.module('thesisSearcherServices', ['ngResour
  
 thesisSearcherServices.factory('PDF', ['$resource',
   function($resource){
-    return $resource('http://192.168.2.18/pdf/:searchValue', {}, {});
+    return $resource('http://178.32.102.161/search/:searchValue', {}, {});
+  }]);
+
+thesisSearcherServices.factory('PDFDetail', ['$resource',
+  function($resource){
+    return $resource('http://178.32.102.161/pdf/:searchValue', {}, {});
   }]);

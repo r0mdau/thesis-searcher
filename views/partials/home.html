@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row searchPositioned">
+	<div class="row searchNoResults" ng-class="{searchPositioned:answers.data.length > 0}">
 		<h1 class="text-center">Thesis Searcher</h1>
 	</div>
 	<div class="row">
@@ -12,7 +12,30 @@
 		    </div>
 		</div>
 	</div>
-	<div class="row searchPositioned">
+
+	<div class="row answersPositioned">
+		<div ng-show="answers.data.length > 0" class="table-responsive">
+		  <table class="table table-striped table-hover">
+		    <thead>
+		        <tr>
+		          <th>#</th>
+		          <th>File <b class="caret"></b></th>
+		          <th>Author <b class="caret"></b></th>
+		          <th>Date <b class="caret"></b></th>
+		          <th>Link</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr ng-repeat="answer in answers.data">
+		          <td>{{answer.id}}</td>
+		          <td>{{answer.fileName}}</td>
+		          <td>{{answer.author}}</td>
+		          <td>{{answer.date}}</td>
+		          <td><a href="#/detail/{{answer.id}}">PDF</a></td>
+		        </tr>
+		      </tbody>
+		    </table>
+		</div>
 		{{answers}}
 	</div>
 </div>
