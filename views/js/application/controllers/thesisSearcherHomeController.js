@@ -1,8 +1,9 @@
-thesisSearcherControllers.controller('thesisSearcherHomeController', ['$scope', 'PDF',
-  function ($scope, PDF) {
-      $scope.query = '';
+thesisSearcherControllers.controller('thesisSearcherHomeController', ['$scope', 'PDF', 'GlobalStorage',
+  function ($scope, PDF, GlobalStorage) {
+      $scope.query = GlobalStorage.getData('query');
 
       $scope.$watch('query', function() {
-         $scope.answers = PDF.get({searchValue: $scope.query});         
+      	GlobalStorage.setData('query', $scope.query);
+        $scope.answers = PDF.get({searchValue: $scope.query});
      });
   }]);
