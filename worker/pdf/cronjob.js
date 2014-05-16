@@ -3,6 +3,7 @@ var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client();
 var fs = require('fs');
 var tika = require('tika');
+var mv = require('mv');
 
 var job = new CronJob({
   cronTime: '*/10 * * * * *',
@@ -12,6 +13,9 @@ var job = new CronJob({
 			if(/[0-9a-zA-Z]+\.pdf/.test(files[i])){
 				tika.extract(files[i], function(err, text, meta) {
 					createDocument(text, meta);	
+				});
+				mv (files[i], '../done/'+files[i], function(error) {
+					console.log("Error");
 				});
 			}
 		}
