@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
 				var memoires = response.hits.hits;
 				for(var i = 0; i < memoires.length; i++){
 					datas.data.push({
-						id : memoires[i]._source.id,
+						id : memoires[i]._id,
 						date : memoires[i]._source.date,
 						author : memoires[i]._source.author,
 						fileName : memoires[i]._source.fileName
