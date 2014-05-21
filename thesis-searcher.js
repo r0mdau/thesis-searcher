@@ -51,15 +51,25 @@ app.use(function(req, res, next) {
 			});
 })
 .get('/pdf/:id', function(req, res) {
-	res.send({data :
-                {
-					id		: "1",
-                    date    : "14 Avril 2013",
-                    author  : "Romain Dauby",
-                    fileName: "M13_DAUBY.pdf",
-                    content : "WAZAAAAAAAAA CONTENU DE OUF"
-                }
-            });
+	var datas = {data : {}};
+    client.search({
+        index: 'thesis',
+        q: '_id:'+req.params.id
+    }, function (error, response) {
+        if(response.hits){
+            if(response.hits.hits){
+                var memoire = response.hits.hits[0];
+                datas.data = {
+                    id : memoire._id,
+                    date : memoire._source.date,
+                    author : memoire._source.author,
+                    fileName : memoire._source.fileName,
+					content : memoire._source.content
+                    };
+            }
+        }
+        res.send(datas);
+    });
 })
 
 .use(function(req, res, next){
