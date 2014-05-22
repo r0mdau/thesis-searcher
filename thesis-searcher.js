@@ -52,22 +52,22 @@ app.use(function(req, res, next) {
 })
 .get('/pdf/:id', function(req, res) {
 	var datas = {data : {}};
-    client.search({
+    client.get({
         index: 'thesis',
-        q: '_id:'+req.params.id
+        type : 'document',
+		id   : req.params.id
     }, function (error, response) {
-        if(response.hits){
-            if(response.hits.hits){
-                var memoire = response.hits.hits[0];
-                datas.data = {
-                    id : memoire._id,
-                    date : memoire._source.date,
-                    author : memoire._source.author,
-                    fileName : memoire._source.fileName,
-					content : memoire._source.content
-                    };
-            }
-        }
+		if(response._source){
+	        datas.data = {
+	        	id : response._id,
+	            date : response._source.date,
+	            author : response._source.author,
+	            fileName : response._source.fileName,
+				content : response._source.content
+	        };
+		}else{
+			datas.data = {error : 'Aucun pdf n\'existe pour cet identifiant'};
+		}
         res.send(datas);
     });
 })
