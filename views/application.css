@@ -28,6 +28,54 @@
 	padding-top: 20px;
 }
 
+table > thead > tr > th > a,
+table > thead > tr > th > a:hover,
+table > thead > tr > th > a:active,
+table > thead > tr > th > a:focus,
+table > thead > tr > th > a:visited {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-post-meta > a,
+.blog-post-meta > a:hover,
+.blog-post-meta > a:active,
+.blog-post-meta > a:focus,
+.blog-post-meta > a:visited {
+  text-decoration: none;
+}
+
+.caret.caret-reversed {
+    border-top-width: 0;
+    border-bottom: 4px solid;
+}
+
+.thesis-content {
+  text-align: justify;
+}
+
+.backToTop,
+.backToTop:hover,
+.backToTop:active,
+.backToTop:focus,
+.backToTop:visited {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  font-size: 5em;
+  background-color: rgba(0, 0, 0, .3);
+  width: 100px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-left: 18px;
+  height: 100px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  display: none;
+}
+
 
 /*
  * Globals

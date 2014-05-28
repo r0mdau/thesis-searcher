@@ -23,7 +23,7 @@ thesisSearcherServices.factory('GlobalStorage', [ '$rootScope',
 	function ($rootScope) {
 		return {
 			getData: function(dataName) {
-				return $rootScope[dataName];
+				return $rootScope[dataName] ? $rootScope[dataName] : '';
 			},
 
 			setData: function(dataName, data) {

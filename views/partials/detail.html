@@ -1,3 +1,7 @@
+<a ng-click="toTop()" class="backToTop" title="Back to top">
+  <span class="glyphicon glyphicon-chevron-up"></span>
+</a>
+
 <div class="blog-masthead">
   <div class="container">
     <nav class="blog-nav">
@@ -11,23 +15,18 @@
 
   <div class="blog-header" id="header">
     <h1 class="blog-title">{{pdf.data.fileName}}</h1>
-    <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
   </div>
 
   <div class="row">
 
-    <div class="col-sm-8 blog-main">
+    <div class="col-sm-12 blog-main">
 
       <div class="blog-post">
-        <h2 class="blog-post-title">Sample content</h2>
-        <p class="blog-post-meta">{{pdf.data.date}} by <a href="">{{pdf.data.author}}</a></p>
+        <p class="blog-post-meta">
+          {{pdf.data.date | date: 'fullDate'}} by <a>{{pdf.data.author}}</a>
+        </p>
 
-        <p>{{pdf.data.content}}</p>
-        <p>{{pdf.data.content}}</p>
-        <p>{{pdf.data.content}}</p>
-        <p>{{pdf.data.content}}</p>
-        <p>{{pdf.data.content}}</p>
-        <p>{{pdf.data.content}}</p>
+        <p class="thesis-content" ng-bind-html="getContent(pdf.data.content)"></p>
 
       </div><!-- /.blog-post -->
     </div><!-- /.blog-main -->
