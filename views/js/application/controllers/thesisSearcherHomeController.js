@@ -1,5 +1,5 @@
-thesisSearcherControllers.controller('thesisSearcherHomeController', ['$scope', 'PDF', 'GlobalStorage',
-  function ($scope, PDF, GlobalStorage) {
+thesisSearcherControllers.controller('thesisSearcherHomeController', ['$scope', 'PDFList', 'GlobalStorage',
+  function ($scope, PDFList, GlobalStorage) {
 	$scope.query = GlobalStorage.getData('query');
 	$scope.predicate = 'fileName';
 
@@ -14,6 +14,6 @@ thesisSearcherControllers.controller('thesisSearcherHomeController', ['$scope', 
 
 	$scope.$watch('query', function() {
 		GlobalStorage.setData('query', $scope.query);
-		$scope.answers = PDF.get({searchValue: $scope.query});
+		$scope.answers = PDFList.get({searchValue: $scope.query});
 	});
   }]);

@@ -9,7 +9,7 @@ thesisSearcherServices.factory('IPProvider', [
 	}
   }]);
  
-thesisSearcherServices.factory('PDF', ['$resource', 'IPProvider',
+thesisSearcherServices.factory('PDFList', ['$resource', 'IPProvider',
   function($resource, IPProvider){
     return $resource('http://' + IPProvider.getServerIP() + '/search/:searchValue', {}, {});
   }]);
