@@ -1,7 +1,6 @@
 thesisSearcherControllers.controller('thesisSearcherDetailController', ['$scope', '$routeParams', '$sce', 'PDFDetail', 'GlobalStorage',
   function ($scope, $routeParams, $sce, PDFDetail, GlobalStorage) {
       $scope.pdf = PDFDetail.get({searchValue: $routeParams.searchValue});
-      // console.log(GlobalStorage.getData('query'))      
 
       $scope.toTop = function() {
       	$("html, body").animate({scrollTop: 0}, 1000);

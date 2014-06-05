@@ -6,7 +6,7 @@
   <div class="container">
     <nav class="blog-nav">
       <a class="blog-nav-item" href="#/home">Home</a>
-      <a class="blog-nav-item active" href="">{{pdf.data.fileName}}</a>
+      <a class="blog-nav-item active" href="" ng-show="!pdf.data.error">{{pdf.data.fileName}}</a>
     </nav>
   </div>
 </div>
@@ -21,7 +21,7 @@
 
     <div class="col-sm-12 blog-main">
 
-      <div class="blog-post">
+      <div class="blog-post" ng-show="!pdf.data.error">
         <p class="blog-post-meta">
           {{pdf.data.date | date: 'fullDate'}} by <a>{{pdf.data.author}}</a>
         </p>
@@ -29,11 +29,20 @@
         <p class="thesis-content" ng-bind-html="getContent(pdf.data.content)"></p>
 
       </div><!-- /.blog-post -->
+
+      <div ng-show="pdf.data.error" class="text-center">
+        <p>
+          {{pdf.data.error}}
+          <br><br>
+          <a href="#/home">Take me somewhere safe!</a>
+        </p>
+      </div>
+
     </div><!-- /.blog-main -->
   </div><!-- /.row -->
 </div><!-- /.container -->
 
-<div class="blog-footer">
+<div class="blog-footer" ng-show="!pdf.data.error">
   <p>
     <a href="#/home">Back to search engine</a>
   </p>

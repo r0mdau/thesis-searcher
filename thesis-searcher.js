@@ -48,7 +48,7 @@ app.use(function(req, res, next) {
 
 .get('/pdf', function(req, res) {
     res.send({data : {
-				warning:'Veuillez fournir l\'identifiant du PDF demande'}
+				warning:'Missing PDF identifier.'}
 			});
 })
 .get('/pdf/:id', function(req, res) {
@@ -67,7 +67,7 @@ app.use(function(req, res, next) {
 				content : response._source.content
 	        };
 		}else{
-			datas.data = {error : 'Aucun pdf n\'existe pour cet identifiant'};
+			datas.data = {error : 'Oops! Something is wrong with the provided PDF identifier.'};
 		}
         res.send(datas);
     });
