@@ -26,7 +26,7 @@ app.use(function(req, res, next) {
 	var datas = {data : []};
 	client.search({
 		index: 'thesis',
-		q: 'content:'+req.params.queryString+' OR author:'+req.params.queryString+' OR fileName:'+req.params.queryString,
+		q: 'content:*'+req.params.queryString+'* OR author:*'+req.params.queryString+'* OR fileName:*'+req.params.queryString+'*',
 		analyzer : "french_stemmer"
 	}, function (error, response) {
 		if(response.hits){
