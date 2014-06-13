@@ -5,6 +5,7 @@ var fs = require('fs');
 var tika = require('tika');
 var mv = require('mv');
 var curFile = '';
+var escape = require('escape-html');
 
 var job = new CronJob({
   	cronTime: '0 * * * * *',
@@ -30,6 +31,7 @@ var job = new CronJob({
 job.start();
 
 function createDocument(text, meta){
+  var textWithoutHTML = escape(text);
 	client.create({
 		index	: 'thesis',
 		type	: 'document',
@@ -37,7 +39,7 @@ function createDocument(text, meta){
 	    	author	: meta.Author,
 	    	date	: meta.date,
 	    	fileName: meta.resourceName,
-	    	content	: text
+	    	content	: textWithoutHTML
   		}
 	}, function (error, response) {
   		console.log(response);

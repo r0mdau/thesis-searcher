@@ -21,6 +21,7 @@
   "dependencies": {
     "cron": "^1.0.4",
     "elasticsearch": "^2.1.4",
+    "escape-html": "^1.0.1",
     "express": "^4.2.0",
     "mv": "^2.0.0",
     "tika": "^0.3.0"
