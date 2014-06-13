@@ -226,3 +226,17 @@ h6, .h6 {
   background-color: #f9f9f9;
   border-top: 1px solid #e5e5e5;
 }
+
+.highlight {
+  background-color: lime;
+}
+
+.highlight.current {
+  background-color: orange;
+}
+
+.searchNavigation {
+  position: fixed;
+  margin-top: 50px;
+  right: 50px;
+}

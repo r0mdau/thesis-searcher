@@ -11,10 +11,16 @@
   </div>
 </div>
 
+<div class="searchNavigation" ng-show="validResearch">
+  <p>Search Navigation</p>
+  <button class="btn btn-primary" ng-click="previousSearch()">Previous</button>
+  <button class="btn btn-primary" ng-click="nextSearch()">Next</button>
+</div>
+
 <div class="container">
 
   <div class="blog-header" id="header">
-    <h1 class="blog-title">{{pdf.data.fileName}}</h1>
+    <h1 class="blog-title" ng-bind-html="getContent(pdf.data.fileName)"></h1>
   </div>
 
   <div class="row">
