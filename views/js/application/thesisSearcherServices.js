@@ -4,7 +4,7 @@ thesisSearcherServices.factory('IPProvider', [
   function(){
   	return {
   		getServerIP: function() {
-    		return '178.32.102.161';
+    		return '178.32.102.161:19900';
   		}
 	}
   }]);
