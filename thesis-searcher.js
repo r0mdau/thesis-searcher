@@ -77,4 +77,4 @@ app.use(function(req, res, next) {
     res.redirect('/info');
 }) 
 
-.listen(80);
+.listen(19900);
